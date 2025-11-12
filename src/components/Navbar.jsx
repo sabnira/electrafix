@@ -1,8 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { CgProfile } from "react-icons/cg";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthContext";
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
 
     const links = (
         <>
@@ -13,7 +17,7 @@ const Navbar = () => {
             <li>
                 <details>
                     <summary>Dashboard</summary>
-                    <ul className="menu menu-dropdown bg-base-100 rounded-box p-2 shadow w-52">
+                    <ul className="menu menu-dropdown bg-base-100 z-1 rounded-box p-2 shadow w-52">
                         <li><Link to='/add-service'>Add Service</Link></li>
                         <li><Link to='/manage-service'>Manage Service</Link></li>
                         <li><Link to='/booked-services'>Booked-Services</Link></li>
@@ -53,15 +57,38 @@ const Navbar = () => {
 
             <div className="navbar-end flex gap-4">
 
-                <div className="w-5 h-5 md:w-10 md:h-10 rounded-3xl overflow-hidden">
-                 
-                    <CgProfile className="w-full h-full text-slate-500" />
-                  
-                </div>
+                {
+                    user ?
+                        <>
+                            <div className="tooltip tooltip-left" data-tip={user && user?.displayName}>
 
-                <NavLink to="/login" className="btn  text-white bg-[#FF7F00]">Login</NavLink>
+                                <div className="w-5 h-5 md:w-10 md:h-10 rounded-3xl overflow-hidden">
+                                    {user?.photoURL ? (
+                                        <img
+                                            referrerPolicy='no-referrer'
+                                            className="w-full h-full object-cover"
+                                            src={user.photoURL}
+                                            alt="User Profile"
+                                        />
+                                    ) : (
+                                        <CgProfile className="w-full h-full" />
+                                    )}
+                                </div>
+                            </div>
 
-                <NavLink to="/register" className="btn text-white bg-[#FF7F00]">Register</NavLink>
+                            <button onClick={logOut} className="btn btn-xs md:btn-md text-white bg-[#FF7F00] ml-2">Logout</button>
+                        </>
+                        :
+                        <>
+                            <div className="w-5 h-5 md:w-10 md:h-10 rounded-3xl overflow-hidden">
+
+                                <CgProfile className="w-full h-full" />
+
+                            </div>
+                            <NavLink to="/login" className="btn text-white bg-[#FF7F00]">Login</NavLink>
+                        </>
+                }
+
             </div>
         </div>
     );
