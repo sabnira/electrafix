@@ -17,7 +17,7 @@ const Navbar = () => {
             <li>
                 <details>
                     <summary>Dashboard</summary>
-                    <ul className="menu menu-dropdown bg-base-100 z-1 rounded-box p-2 shadow w-52">
+                    <ul className="menu menu-dropdown text-black z-1 rounded-box p-2 shadow w-52">
                         <li><Link to='/add-service'>Add Service</Link></li>
                         <li><Link to='/manage-service'>Manage Service</Link></li>
                         <li><Link to='/booked-services'>Booked-Services</Link></li>
@@ -31,7 +31,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar w-11/12 mx-auto bg-base-100">
+        <div className="navbar w-11/12 mx-auto py-4">
             <div className="navbar-start">
 
                 <div className="dropdown">
@@ -40,13 +40,13 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-200 text-black rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
 
-                <img className='w-auto h-14' src={logo} alt="" />
-
+                <img className='w-auto h-6 md:h-10' src={logo} alt="" />
+                
             </div>
 
             <div className="navbar-center hidden lg:flex">
@@ -62,7 +62,7 @@ const Navbar = () => {
                         <>
                             <div className="tooltip tooltip-left" data-tip={user && user?.displayName}>
 
-                                <div className="w-5 h-5 md:w-10 md:h-10 rounded-3xl overflow-hidden">
+                                <div className="w-5 h-5 md:w-10 md:h-10 rounded-3xl overflow-hidden ring-2 ring-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)]">
                                     {user?.photoURL ? (
                                         <img
                                             referrerPolicy='no-referrer'
@@ -76,7 +76,9 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            <button onClick={logOut} className="btn btn-xs md:btn-md text-white bg-[#FF7F00] ml-2">Logout</button>
+                            <button onClick={logOut} className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition-all rounded-lg font-semibold shadow-lg text-white">
+                                Logout
+                            </button>
                         </>
                         :
                         <>
@@ -85,7 +87,7 @@ const Navbar = () => {
                                 <CgProfile className="w-full h-full" />
 
                             </div>
-                            <NavLink to="/login" className="btn text-white bg-[#FF7F00]">Login</NavLink>
+                            <NavLink to="/login" className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition-all rounded-lg font-semibold shadow-lg text-white">Login</NavLink>
                         </>
                 }
 
