@@ -1,10 +1,11 @@
-
 import Lottie from "lottie-react";
 import Navbar from "./Navbar";
 import worker from "../assets/yellow-worker.json";
 import welder from "../assets/welder.json";
 import computer from "../assets/computer.json";
 import electrician from "../assets/electrician.json";
+
+
 
 const Banner = () => {
     return (

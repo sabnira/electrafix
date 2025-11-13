@@ -11,7 +11,7 @@ const Main = () => {
     return (
         <div>
         
-            {!isHome && <Navbar />}
+            {!isHome && <Navbar/>}
 
             <div className='min-h-[calc(100vh-306px)]'>
                 <Outlet />

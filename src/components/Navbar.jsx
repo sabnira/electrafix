@@ -17,11 +17,11 @@ const Navbar = () => {
             <li>
                 <details>
                     <summary>Dashboard</summary>
-                    <ul className="menu menu-dropdown text-black z-1 rounded-box p-2 shadow w-52">
-                        <li><Link to='/add-service'>Add Service</Link></li>
-                        <li><Link to='/manage-service'>Manage Service</Link></li>
-                        <li><Link to='/booked-services'>Booked-Services</Link></li>
-                        <li><Link to='/service-to-do'>Service-To-Do</Link></li>
+                    <ul className="menu menu-dropdown text-lg text-white/90 z-1 rounded-box p-2 shadow w-52 bg-[#263253]">
+                        <li className="hover:bg-[#171c29c8] rounded"><Link to='/add-service'>Add Service</Link></li>
+                        <li className="hover:bg-[#171c29c8] rounded"><Link to='/manage-service'>Manage Service</Link></li>
+                        <li className="hover:bg-[#171c29c8] rounded"><Link to='/booked-services'>Booked-Services</Link></li>
+                        <li className="hover:bg-[#171c29c8] rounded"><Link to='/service-to-do'>Service-To-Do</Link></li>
                     </ul>
                 </details>
             </li>
@@ -31,7 +31,8 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar w-11/12 mx-auto py-4">
+        <div className="bg-[#0B0F1A]">
+        <div className="navbar w-11/12 mx-auto py-4 text-white">
             <div className="navbar-start">
 
                 <div className="dropdown">
@@ -40,7 +41,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-200 text-black rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-[#0B0F1A] rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
@@ -92,6 +93,7 @@ const Navbar = () => {
                 }
 
             </div>
+        </div>
         </div>
     );
 };
