@@ -1,2 +1,25 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+
+.custom-shape-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 77px;
+}
+
+.custom-shape-divider-bottom .shape-fill {
+    fill: #1F2434;
+}

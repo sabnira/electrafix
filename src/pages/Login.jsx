@@ -67,7 +67,7 @@ const Login = () => {
                     <Lottie className="w-md md:w-xl" animationData={login} loop={true} />
                 </div>
 
-                <div className="card mx-2 md:w-xl md:mx-auto rounded-3xl bg-black/50 backdrop-blur-md border border-white/40 text-white relative z-10">
+                <div className="card mx-2 md:w-xl md:mx-auto rounded-3xl bg-black/50 backdrop-blur-md border border-white/40 text-white relative ">
                     <div className="card-body p-10">
                         <h2 className="text-4xl mx-auto font-extrabold text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-purple-500 to-pink-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.8)] mb-6">
                             Log in your Account
@@ -78,7 +78,7 @@ const Login = () => {
                             <input
                                 type="email"
                                 name="email"
-                                className="input w-full bg-black/40 border border-gray-600 focus:border-blue-400 focus:ring focus:ring-blue-500/40 text-white rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                                className="input w-full bg-black/40 border border-gray-600 focus:border-blue-400 text-white rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.4)]"
                                 placeholder="Email"
                                 required
                             />
@@ -112,7 +112,7 @@ const Login = () => {
 
                         </form>
 
-                        <div className="divider z-10 border-blue-400  text-gray-400">or</div>
+                        <div className="divider text-gray-400">or</div>
 
                         <button
                             onClick={handleGoogleSignIn}

@@ -30,16 +30,16 @@ const Banner = () => {
             <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-indigo-400/20 blur-[150px] rounded-full"></div>
 
 
-            
+
             <div className="relative z-20 w-full">
                 <Navbar></Navbar>
             </div>
 
 
-            <div className="w-10/12 mx-auto flex flex-col md:flex-row gap-6 items-center justify-center content-center mt-16 mb-28">
+            <div className="w-10/12 mx-auto flex flex-col md:flex-row gap-6 items-center justify-center content-center mt-20 mb-40">
 
-                
-                <div className="relative z-10 flex-1 flex items-center justify-center text-center md:text-left   mx-auto">
+
+                <div className="relative z-10 flex-1 flex items-center justify-center text-center md:text-left mx-auto">
                     <div className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-xl hover:scale-105 transition-transform">
                         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-purple-500 to-pink-400">
                             We Bring Electronics Back to Life⚡
@@ -72,6 +72,12 @@ const Banner = () => {
 
                 </div>
 
+            </div>
+
+            <div class="custom-shape-divider-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
             </div>
 
 
