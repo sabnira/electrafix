@@ -1,23 +1,67 @@
 
 
-const ServiceCard = () => {
+const ServiceCard = ({ service }) => {
+    const { image, serviceName, price, description, serviceProvider } = service || {};
+
     return (
-        <div className="card bg-base-100 w-96 shadow-sm">
-            <figure className="px-10 pt-10">
+        <div className="bg-white rounded-xl shadow-md overflow-hidden  transition-transform duration-300 hover:scale-105">
+
+           
+            <div className="w-full h-52">
                 <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                    className="rounded-xl" />
-            </figure>
-            <div className="card-body items-center text-center">
-                <h2 className="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                    src={image}
+                    alt={serviceName}
+                    className="w-full h-full object-cover "
+                />
+            </div>
+
+           
+            <div className="p-6 space-y-4">
+                
+                <h2 className="text-xl font-bold text-gray-900 tracking-tight">
+                    {serviceName}
+                </h2>
+
+                <p className="text-gray-600 text-base leading-relaxed">
+                    {description?.slice(0, 100)}
+                    {description?.length > 100 && "..."}
+                </p>
+
+                <div className="border-b border-gray-200"></div>
+
+                <div className="flex justify-between text-center">
+                   
+                    {serviceProvider && (
+                        <div className="flex items-center gap-3">
+                            <img
+                                referrerPolicy="no-referrer"
+                                src={serviceProvider.photo}
+                                alt={serviceProvider.name}
+                                className="w-10 h-10 rounded-full object-cover border border-black"
+                            />
+                            <span className="text-gray-700 text-sm font-medium">
+                                {serviceProvider.name}
+                            </span>
+                        </div>
+                    )}
+
+    
+                    <span className="bg-gray-800 text-white text-base font-bold px-6 rounded-lg shadow-md flex items-center">
+                        $ {price}
+                    </span>
                 </div>
+
+                <button className="w-full  py-2 text-white text-md font-bold bg-linear-to-r from-blue-700  to-purple-700 hover:from-purple-800 hover:to-blue-800 transition-all rounded-lg shadow-lg">
+                    View Details
+                </button>
             </div>
         </div>
+
     );
 };
 
 export default ServiceCard;
+
+
+
+

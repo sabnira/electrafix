@@ -1,15 +1,55 @@
+import axios from "axios";
+import { useContext } from "react";
+import toast from "react-hot-toast";
+import { AuthContext } from "../provider/AuthContext";
 
 
 const AddServices = () => {
 
-    const handleAddServices = e => {
+    const {user} = useContext(AuthContext)
+
+    const handleAddServices = async e => {
         e.preventDefault();
 
-        // const form = e.target;
+        const form = e.target
+        const image = form.image.value
+        const serviceName = form.serviceName.value
+        const price = form.price.value
+        const serviceArea = form.serviceArea.value
+        const description = form.description.value
+
+        console.log({image, serviceName, price, serviceArea, description})
+
+        const formData = {
+            image,
+            serviceName,
+            price,
+            serviceArea,
+            description,
+            serviceProvider: {
+                email: user?.email,
+                name: user?.displayName,
+                photo: user?.photoURL,
+            }
+        }
+
+        try {
+            //make a post request
+            await axios.post(`${import.meta.env.VITE_API_URL}/add-service`, formData)
+            form.reset()
+            toast.success('Data Added Successfully!!!')
+
+        } catch (err) {
+            console.log(err)
+            toast.error(err.message)
+        }
+
     }
 
     return (
         <div className="bg-linear-to-r from-black via-black to-blue-950 relative overflow-hidden py-16">
+
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
             
             <div className="card p-4 mx-2 md:w-2xl md:mx-auto rounded-3xl  backdrop-blur-md border bg-black/80 border-white/40 text-white relative ">
 

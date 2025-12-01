@@ -9,27 +9,9 @@ import electrician from "../assets/electrician.json";
 
 const Banner = () => {
     return (
-        <section className="relative flex flex-col bg-black text-white overflow-hidden">
+        <section className="relative flex flex-col bg-black text-white overflow-hidden bg-linear-to-r from-purple-950 via-black to-blue-950">
 
-            {/* Animated gradient background */}
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: "linear-gradient(270deg, #6b21a8, #000000, #1e3a8a)",
-                    backgroundSize: "600% 600%",
-                    animation: "gradientShift 10s ease infinite",
-                }}
-            ></div>
-
-            {/* Overlay for depth */}
-            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-
-
-            {/* Decorative blur lights */}
-            <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-blue-500/20 blur-[150px] rounded-full"></div>
-            <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-indigo-400/20 blur-[150px] rounded-full"></div>
-
-
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
             <div className="relative z-20 w-full">
                 <Navbar></Navbar>
@@ -80,17 +62,6 @@ const Banner = () => {
                 </svg>
             </div>
 
-
-            {/* Embedded keyframes */}
-            <style>
-                {`
-                    @keyframes gradientShift {
-                        0% { background-position: 0% 50%; }
-                        50% { background-position: 100% 50%; }
-                        100% { background-position: 0% 50%; }
-                    }
-                `}
-            </style>
         </section>
     );
 };
