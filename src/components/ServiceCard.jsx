@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const ServiceCard = ({ service }) => {
-    const { image, serviceName, price, description, serviceProvider } = service || {};
+    const { _id, image, serviceName, price, description, serviceProvider } = service || {};
 
     return (
         <div className="bg-white rounded-xl shadow-md overflow-hidden  transition-transform duration-300 hover:scale-105">
@@ -46,14 +47,14 @@ const ServiceCard = ({ service }) => {
                     )}
 
     
-                    <span className="bg-gray-800 text-white text-base font-bold px-6 rounded-lg shadow-md flex items-center">
+                    <span className="bg-gray-200 font-bold px-6 rounded-lg  flex items-center">
                         $ {price}
                     </span>
                 </div>
 
-                <button className="w-full  py-2 text-white text-md font-bold bg-linear-to-r from-blue-700  to-purple-700 hover:from-purple-800 hover:to-blue-800 transition-all rounded-lg shadow-lg">
+                <Link to={`/service/${_id}`}><button className="w-full  py-2 text-white text-md font-bold bg-linear-to-r from-blue-700  to-purple-700 hover:from-purple-800 hover:to-blue-800 transition-all rounded-lg shadow-lg">
                     View Details
-                </button>
+                </button></Link>
             </div>
         </div>
 
