@@ -21,10 +21,18 @@ const Services = () => {
   return (
 
     <div className="bg-[#1F2434] py-24">
-      <div className='w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10'>
-        {
-          services.slice(0, 6).map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
-        }
+
+      <div className="w-11/12 mx-auto">
+
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-20 inline-block text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-400">
+          Popular Services
+        </h1>
+
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
+          {
+            services.slice(0, 6).map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+          }
+        </div>
       </div>
     </div>
   );

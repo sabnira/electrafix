@@ -5,7 +5,7 @@ const ServiceCard = ({ service }) => {
     const { _id, image, serviceName, price, description, serviceProvider } = service || {};
 
     return (
-        <div className="bg-white rounded-xl shadow-md overflow-hidden  transition-transform duration-300 hover:scale-105">
+        <div className="bg-white/90 rounded-xl shadow-md overflow-hidden  transition-transform duration-300 hover:scale-105">
 
            
             <div className="w-full h-52">
@@ -24,11 +24,11 @@ const ServiceCard = ({ service }) => {
                 </h2>
 
                 <p className="text-gray-600 text-base leading-relaxed">
-                    {description?.slice(0, 100)}
-                    {description?.length > 100 && "..."}
+                    {description?.slice(0, 90)}
+                    {description?.length > 90 && "..."}
                 </p>
 
-                <div className="border-b border-gray-200"></div>
+                <div className="border-b border-gray-400"></div>
 
                 <div className="flex justify-between text-center">
                    

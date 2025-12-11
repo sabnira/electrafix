@@ -51,7 +51,7 @@ const AddServices = () => {
 
             <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
             
-            <div className="card p-4 mx-2 md:w-2xl md:mx-auto rounded-3xl  backdrop-blur-md border bg-black/80 border-white/40 text-white relative ">
+            <div className="card p-4 mx-2 md:w-2xl md:mx-auto rounded-3xl  backdrop-blur-md border bg-black/80  border-white/40 text-white relative ">
 
                 <div className="card-body">
 
