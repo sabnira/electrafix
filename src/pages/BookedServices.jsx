@@ -48,7 +48,7 @@ const BookedServices = () => {
                 <tr>
                   <th className="px-4 py-2">Image</th>
                   <th className="px-4 py-2">Service Name</th>
-                  <th className="px-4 py-2">Provider</th>
+                  <th className="px-4 py-2">Service Provider</th>
                   <th className="px-4 py-2">Price</th>
                   <th className="px-4 py-2">Date</th>
                   <th className="px-4 py-2">Instruction</th>

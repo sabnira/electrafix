@@ -8,6 +8,7 @@ import AllServices from "../pages/AllServices";
 import AddServices from "../pages/AddServices";
 import ServiceDetails from "../pages/ServiceDetails";
 import BookedServices from "../pages/BookedServices";
+import ServiceToDo from "../pages/ServiceToDo";
 
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: '/booked-services',
                 element: <BookedServices></BookedServices>
+            },
+            {
+                path: '/service-to-do',
+                element: <ServiceToDo></ServiceToDo>
             }
         ]
     },
