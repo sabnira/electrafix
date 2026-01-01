@@ -4,6 +4,7 @@ import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const ManageServices = () => {
 
@@ -103,7 +104,9 @@ const ManageServices = () => {
 
 
                                         <td className="px-4 py-2 font-semibold">
-                                            <button className="btn shadow-none mr-4"><span className="text-green-700"><FaEdit /></span> Edit</button>
+
+                                            <Link  to={`/update-services/${service._id}`} className="btn shadow-none mr-4"><span className="text-green-700"><FaEdit /></span> Edit</Link>
+
                                             <button onClick={() => modernDelete(service._id)} className="btn shadow-none"><span className="text-red-700"><RiDeleteBin5Line /></span> Delete</button>
                                         </td>
                                     </tr>

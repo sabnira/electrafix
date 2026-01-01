@@ -10,6 +10,7 @@ import ServiceDetails from "../pages/ServiceDetails";
 import BookedServices from "../pages/BookedServices";
 import ServiceToDo from "../pages/ServiceToDo";
 import ManageServices from "../pages/ManageServices";
+import UpdateService from "../pages/UpdateService";
 
 
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: '/manage-services',
                 element: <ManageServices></ManageServices>
+            },
+            {
+                path: '/update-services/:id',
+                element: <UpdateService></UpdateService>
             }
         ]
     },
