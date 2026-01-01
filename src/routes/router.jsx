@@ -9,6 +9,7 @@ import AddServices from "../pages/AddServices";
 import ServiceDetails from "../pages/ServiceDetails";
 import BookedServices from "../pages/BookedServices";
 import ServiceToDo from "../pages/ServiceToDo";
+import ManageServices from "../pages/ManageServices";
 
 
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: '/service-to-do',
                 element: <ServiceToDo></ServiceToDo>
+            },
+            {
+                path: '/manage-services',
+                element: <ManageServices></ManageServices>
             }
         ]
     },

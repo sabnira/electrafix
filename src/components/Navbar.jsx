@@ -19,7 +19,7 @@ const Navbar = () => {
                     <summary>Dashboard</summary>
                     <ul className="menu menu-dropdown text-lg text-white/90 z-1 rounded-box p-2 shadow w-52 bg-[#263253]">
                         <li className="hover:bg-[#171c29c8] rounded"><Link to='/add-services'>Add Service</Link></li>
-                        <li className="hover:bg-[#171c29c8] rounded"><Link to='/manage-service'>Manage Service</Link></li>
+                        <li className="hover:bg-[#171c29c8] rounded"><Link to='/manage-services'>Manage Services</Link></li>
                         <li className="hover:bg-[#171c29c8] rounded"><Link to='/booked-services'>Booked-Services</Link></li>
                         <li className="hover:bg-[#171c29c8] rounded"><Link to='/service-to-do'>Service-To-Do</Link></li>
                     </ul>
