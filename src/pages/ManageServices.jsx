@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthContext";
 import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import toast from "react-hot-toast";
 
 const ManageServices = () => {
 
@@ -18,6 +19,44 @@ const ManageServices = () => {
     const fetchMyAddServices = async () => {
         const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/myAddServices/${user?.email}`)
         setMyAddServices(data)
+    }
+
+    //delete functionality
+    const handleDelete = async id => {
+        try {
+            const { data } = await axios.delete(`${import.meta.env.VITE_API_URL}/myAddServices/${id}`)
+            console.log(data);
+            toast.success('Data Deleted Successfully!!!')
+            fetchMyAddServices()
+        } catch (err) {
+            console.log(err);
+            toast.error(err.message)
+        }
+    }
+
+    const modernDelete = id => {
+        toast(
+            (t) => (
+                <div className='flex gap-3 items-center'>
+
+                    <div><p>Are you <b>sure?</b></p></div>
+
+                    <div>
+                        <button
+                            className='bg-red-400 text-white px-3 py-1 rounded-md mr-2'
+                            onClick={() => {
+                                toast.dismiss(t.id)
+                                handleDelete(id)
+                            }}>Delete</button>
+
+                        <button
+                            className='bg-green-400 text-white px-3 py-1 rounded-md'
+                            onClick={() => toast.dismiss(t.id)}>Cancel</button>
+                    </div>
+
+                </div>
+            )
+        )
     }
 
     return (
@@ -65,7 +104,7 @@ const ManageServices = () => {
 
                                         <td className="px-4 py-2 font-semibold">
                                             <button className="btn shadow-none mr-4"><span className="text-green-700"><FaEdit /></span> Edit</button>
-                                            <button className="btn shadow-none"><span className="text-red-700"><RiDeleteBin5Line /></span> Delete</button>
+                                            <button onClick={() => modernDelete(service._id)} className="btn shadow-none"><span className="text-red-700"><RiDeleteBin5Line /></span> Delete</button>
                                         </td>
                                     </tr>
                                 ))}
