@@ -17,8 +17,8 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
 
-    const from = location?.state || '/'
-    console.log(from)
+    // const from = location?.state || '/'
+    // console.log(from)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -37,7 +37,7 @@ const Login = () => {
                 confirmButtonColor: "#43934A"
             });
 
-            navigate(from, { replace: true })
+            navigate(location?.state ? location.state : "/");
 
         } catch (err) {
             setErrorMessage(err.message);
@@ -53,7 +53,9 @@ const Login = () => {
                 text: "Using your Google account.",
                 confirmButtonColor: "#43934A"
             });
-            navigate('/')
+            
+            navigate(location?.state ? location.state : "/")
+            
         } catch (err) {
             setErrorMessage(err.message);
         }

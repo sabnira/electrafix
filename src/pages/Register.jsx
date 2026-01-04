@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthContext";
 import Swal from "sweetalert2";
 import register from "../assets/register.json";
@@ -12,6 +12,8 @@ const Register = () => {
 
     const navigate = useNavigate()
     const { createUser, signInWithGoogle, updateUserProfile, setUser } = useContext(AuthContext)
+
+    const location = useLocation();
 
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -45,8 +47,9 @@ const Register = () => {
                 text: "Your account has been created successfully.",
                 confirmButtonColor: "#43934A",
             })
-            navigate('/')
-            // navigate(location?.state ? location.state : "/");
+
+            navigate(location?.state ? location.state : "/");
+
         } catch (err) {
             setErrorMessage(err.message);
         }
@@ -62,7 +65,9 @@ const Register = () => {
                 text: "Using your Google account.",
                 confirmButtonColor: "#43934A"
             });
-            navigate('/')
+
+            navigate(location?.state ? location.state : "/")
+
         } catch (err) {
             setErrorMessage(err.message);
         }
