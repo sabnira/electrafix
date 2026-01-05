@@ -30,7 +30,7 @@ const Services = () => {
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
           {
-            services.slice(0, 10).map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+            services.slice(0, 6).map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
           }
         </div>
       </div>
