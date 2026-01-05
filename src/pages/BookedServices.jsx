@@ -31,9 +31,9 @@ const BookedServices = () => {
 
 
   return (
-    <div className="p-6 min-h-screen bg-linear-to-br from-gray-700 via-black to-gray-800 text-white ">
+    <div className="py-16 p-6 min-h-screen bg-linear-to-br from-gray-700 via-black to-gray-800 text-white ">
 
-      <h2 className="text-3xl font-bold mt-10 text-center ">Booked Services</h2>
+      <h2 className="text-3xl font-bold text-center ">Booked Services</h2>
       <p className="text-center mt-2 mb-8">Monitor all your booked services in one place and stay informed about their current status and details</p>
 
       <div className="w-11/12 mx-auto bg-white/10 p-8 border border-gray-700">

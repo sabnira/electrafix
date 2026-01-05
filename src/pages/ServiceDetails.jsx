@@ -67,7 +67,7 @@ const ServiceDetails = () => {
 
   
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-700 via-black to-gray-800 text-white flex flex-col items-center py-12 px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-700 via-black to-gray-800 text-white flex flex-col items-center py-16 px-4">
 
       <div className="w-full max-w-5xl relative rounded-xl overflow-hidden shadow-lg">
         <img src={image} alt={serviceName} className="w-full h-80 object-cover" />
