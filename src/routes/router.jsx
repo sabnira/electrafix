@@ -13,6 +13,7 @@ import ManageServices from "../pages/ManageServices";
 import UpdateService from "../pages/UpdateService";
 import PrivateRoute from "./PrivateRoute";
 import About from "../pages/About";
+import Contact from "../pages/Contact";
 
 
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             },
             {
                 path: '/add-services',
