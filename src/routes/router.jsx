@@ -70,8 +70,13 @@ const router = createBrowserRouter([
             {
                 path: '/update-services/:id',
                 element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>
-            }
-        ]
+            },
+              {
+        path: "*",
+        element: <Error></Error>
+    }
+        ],
+        
     },
 ]);
 
