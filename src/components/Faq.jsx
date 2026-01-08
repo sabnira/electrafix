@@ -3,7 +3,7 @@ import faq from "../assets/client-FAQ.json";
 
 const Faq = () => {
     return (
-        <section className="py-20 bg-[#141620]">
+        <section className="py-28 bg-[#141620]">
             <div className="max-w-7xl mx-auto px-6">
 
                 <div className="text-center mb-20">

@@ -2,10 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../provider/AuthContext";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 const ServiceToDo = () => {
 
+    const axiosSecure = useAxiosSecure()
     const { user } = useContext(AuthContext);
     const [MyBookedServices, setMyBookedServices] = useState([]);
 
@@ -16,7 +18,7 @@ const ServiceToDo = () => {
     }, [user])
 
     const fetchMyBookedServices = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/myServices/${user?.email}`)
+        const { data } = await axiosSecure.get(`/myServices/${user?.email}`)
         setMyBookedServices(data)
     }
 

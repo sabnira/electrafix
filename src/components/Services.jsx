@@ -21,7 +21,7 @@ const Services = () => {
 
   return (
 
-    <div className="bg-[#1F2434] py-24">
+    <div className="bg-[#1F2434] py-28">
 
       <div className="w-11/12 mx-auto">
 

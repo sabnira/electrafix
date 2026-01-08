@@ -5,9 +5,11 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const ManageServices = () => {
 
+    const axiosSecure = useAxiosSecure()
     const { user } = useContext(AuthContext);
     const [myAddServices, setMyAddServices] = useState([]);
 
@@ -18,7 +20,7 @@ const ManageServices = () => {
     }, [user])
 
     const fetchMyAddServices = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/myAddServices/${user?.email}`)
+        const { data } = await axiosSecure.get(`/myAddServices/${user?.email}`)
         setMyAddServices(data)
     }
 

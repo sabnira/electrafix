@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import axios from "axios";
 import { AuthContext } from "../provider/AuthContext";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 const BookedServices = () => {
 
+  const axiosSecure = useAxiosSecure()
   const { user } = useContext(AuthContext);
   const [bookedServices, setBookedServices] = useState([]);
 
@@ -15,19 +16,9 @@ const BookedServices = () => {
   }, [user])
 
   const fetchAllBookedServices = async () => {
-    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/bookings/${user?.email}`)
+    const { data } = await axiosSecure.get(`/bookings/${user?.email}`)
     setBookedServices(data)
   }
-
-
-  // const handleStatusChange = async (id, prevStatus, status) => {
-
-  //   if (prevStatus !== 'Pending')
-  //     return console.log('Not Allowed')
-
-  //   console.log({id, prevStatus, status});
-
-  // }
 
 
   return (

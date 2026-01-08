@@ -1,6 +1,6 @@
 const ClientSay = () => {
     return (
-        <section className="py-20 bg-linear-to-b from-black via-[#05010f] to-black">
+        <section className="py-28 bg-linear-to-b from-black via-[#05010f] to-black">
             <div className="max-w-7xl mx-auto px-6">
 
 

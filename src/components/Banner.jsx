@@ -36,8 +36,8 @@ const Banner = () => {
                             <Link to="/services"><button className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition-all rounded-lg font-semibold shadow-lg">
                                 Book a Service
                             </button></Link>
-                            <Link to="/services"><button className="px-6 py-3 bg-transparent border border-gray-400 hover:border-blue-400 hover:text-blue-400 transition-all rounded-lg font-semibold">
-                                Learn More
+                            <Link to="/contact"><button className="px-6 py-3 bg-transparent border border-gray-400 hover:border-blue-400 hover:text-blue-400 transition-all rounded-lg font-semibold">
+                                Contact Us
                             </button></Link>
                         </div>
                     </div>
