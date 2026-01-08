@@ -88,7 +88,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Values */}
+            
             <section className="py-20 max-w-7xl mx-auto px-6">
                 <h2 className="text-3xl font-semibold text-center text-cyan-400 mb-12">
                     Our Core Values

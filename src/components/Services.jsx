@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
+import { NavLink } from "react-router-dom";
 
 
 const Services = () => {
@@ -33,6 +34,10 @@ const Services = () => {
             services.slice(0, 6).map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
           }
         </div>
+
+         <div className='text-center mt-10'>
+                <NavLink to="/services" className="btn px-20 mx-auto shadow-none">View All</NavLink>
+          </div>
       </div>
     </div>
   );

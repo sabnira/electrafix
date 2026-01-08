@@ -4,6 +4,7 @@ import worker from "../assets/yellow-worker.json";
 import welder from "../assets/welder.json";
 import computer from "../assets/computer.json";
 import electrician from "../assets/electrician.json";
+import { Link } from "react-router-dom";
 
 
 
@@ -32,12 +33,12 @@ const Banner = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start">
-                            <button className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition-all rounded-lg font-semibold shadow-lg">
+                            <Link to="/services"><button className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition-all rounded-lg font-semibold shadow-lg">
                                 Book a Service
-                            </button>
-                            <button className="px-6 py-3 bg-transparent border border-gray-400 hover:border-blue-400 hover:text-blue-400 transition-all rounded-lg font-semibold">
+                            </button></Link>
+                            <Link to="/services"><button className="px-6 py-3 bg-transparent border border-gray-400 hover:border-blue-400 hover:text-blue-400 transition-all rounded-lg font-semibold">
                                 Learn More
-                            </button>
+                            </button></Link>
                         </div>
                     </div>
                 </div>
