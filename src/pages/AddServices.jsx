@@ -18,7 +18,7 @@ const AddServices = () => {
         const serviceArea = form.serviceArea.value
         const description = form.description.value
 
-        console.log({image, serviceName, price, serviceArea, description})
+        // console.log({image, serviceName, price, serviceArea, description})
 
         const formData = {
             image,

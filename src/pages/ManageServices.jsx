@@ -28,11 +28,11 @@ const ManageServices = () => {
     const handleDelete = async id => {
         try {
             const { data } = await axios.delete(`${import.meta.env.VITE_API_URL}/myAddServices/${id}`)
-            console.log(data);
+            // console.log(data);
             toast.success('Data Deleted Successfully!!!')
             fetchMyAddServices()
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             toast.error(err.message)
         }
     }

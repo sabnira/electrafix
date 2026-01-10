@@ -25,17 +25,17 @@ const ServiceToDo = () => {
     const handleStatusChange = async (id, prevStatus, status) => {
 
         if (prevStatus === status)
-            return console.log('Not Allowed')
+            return toast.error('Not Allowed')
 
         try {
             const { data } = await axios.patch(`${import.meta.env.VITE_API_URL}/status-update/${id}`, { status })
 
-            console.log(data)
+            // console.log(data)
             toast.success(`Status Changed To ${status}`)
             //refresh ui
             fetchMyBookedServices()
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             toast.error(err.message)
         }
 

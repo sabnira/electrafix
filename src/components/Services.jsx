@@ -17,7 +17,7 @@ const Services = () => {
     setServices(data)
   }
 
-  console.log(services);
+  // console.log(services);
 
   return (
 

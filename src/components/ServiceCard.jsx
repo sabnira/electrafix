@@ -24,8 +24,8 @@ const ServiceCard = ({ service }) => {
                 </h2>
 
                 <p className="text-gray-600 text-base leading-relaxed">
-                    {description?.slice(0, 90)}
-                    {description?.length > 90 && "..."}
+                    {description?.slice(0, 85)}
+                    {description?.length > 85 && "..."}
                 </p>
 
                 <div className="border-b border-gray-400"></div>

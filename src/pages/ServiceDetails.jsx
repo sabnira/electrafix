@@ -57,7 +57,7 @@ const ServiceDetails = () => {
       toast.success('Booking submitted successfully!')
       navigate('/')
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error(err?.response?.data)
     }
 
